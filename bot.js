@@ -65,7 +65,8 @@ var loadData = function(reload){
 				ask(message, convo, q);
 			});
 		}else{
-			var matches = message.text.match(new RegExp(message.text, 'i'));
+			console.log(message);
+			var matches = message.text.match(new RegExp(message.hears[0], 'i'));
 			var value = matches[1];
 			var say = q.says.replace('$', value);
 			bot.reply(message, say);
@@ -79,6 +80,7 @@ var loadData = function(reload){
 				var q = row_data[key];
 				var hears = q.hears.split('\n');
 				controller.hears(hears,'direct_message,direct_mention,mention',function(bot, message) {
+					message.hears = hears;
 					doo(message, q);
 				});
 			})();
