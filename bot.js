@@ -6,7 +6,7 @@ var GoogleSpreadsheet = require("google-spreadsheet");
 var bot, oldMessage;
 
 var controller = Botkit.slackbot({
-		debug: true,
+		debug: false,
 });
 
 var my_sheet = new GoogleSpreadsheet('1bUvxoGOKLqkhyNb6eTpiHkllFy2D0gFRGMhVrLNopzc');
