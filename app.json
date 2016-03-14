@@ -10,7 +10,7 @@
     },
     "GOOGLE_URL": {
       "description": "The url for your spreadsheet.",
-      "value": "5"
+      "value": ""
     }
   },
   "keywords": ["node", "botkit", "slack" ,"google", "spreadsheets"]
