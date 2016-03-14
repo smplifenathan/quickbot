@@ -1,6 +1,6 @@
 # QuickBot
 
-![Quickbot](quickbot.svg)
+<img src="quickbot.svg"/>
 > A quick and easy Slackbot using Google Sheets. No programing needed.
 
 

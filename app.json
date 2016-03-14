@@ -2,7 +2,7 @@
   "name": "Quickbot",
   "description": "A Slackbot using Google Sheets",
   "repository": "https://github.com/Normally/Quickbot",
-  "logo": "https://node-js-sample.herokuapp.com/node.svg",
+  "logo": "https://raw.githubusercontent.com/normally/quickbot/master/dist/quickbot.svg",
   "env": {
     "BOT_TOKEN": {
       "description": "API Token. Begins with 'xoxb-'",
