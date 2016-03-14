@@ -10,7 +10,7 @@ To use this slackbot you need a [Slack](), [Heroku]() and [Google Docs]() accoun
 
 1. <a href="https://my.slack.com/services/new/bot" target="_blank">Add a bot configuration</a> on Slack.
 
-2. <a href="https://docs.google.com/spreadsheets/u/1/d/1FOsDXyyO7ZSfFYcW1GO7V7iV240eFjDjus8yJ6Ytl1o/copy target="_blank">Copy this</a> spreadsheet to your google docs and make it public *File > Publish to the web... > Publish*
+2. <a href="https://docs.google.com/spreadsheets/u/1/d/1FOsDXyyO7ZSfFYcW1GO7V7iV240eFjDjus8yJ6Ytl1o/copy" target="_blank">Copy this</a> spreadsheet to your google docs and make it public *File > Publish to the web... > Publish*
 
 3. [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)<br/>enter the bot **API token** and the Google Sheet **URL**. 
 <br/><br/>
