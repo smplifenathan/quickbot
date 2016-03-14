@@ -1,16 +1,20 @@
 {
   "name": "dr-bot",
-  "version": "1.0.0",
-  "description": "dr bot for slack",
+  "version": "0.0.1",
+  "description": "Bot for slack",
   "main": "bot.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+      "start": "node bot.js"
   },
-  "author": "",
+  "author": "Nic Mulvaney @mulhoon",
   "license": "ISC",
   "dependencies": {
     "botkit": "0.0.8",
     "google-spreadsheet": "^1.1.4",
     "memwatch-next": "^0.2.10"
-  }
+  },
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/horimislime/botkit-heroku-redis-example.git"
+  },
 }

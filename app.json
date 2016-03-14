@@ -1,0 +1,7 @@
+{
+  "name": "Slackbot",
+  "description": "A Slackbot using Google Sheets",
+  "repository": "https://github.com/Normally/dr-bot",
+  "logo": "https://node-js-sample.herokuapp.com/node.svg",
+  "keywords": ["node", "botkit", "slack" ,"google", "spreadsheets"]
+}
