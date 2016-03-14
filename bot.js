@@ -1,20 +1,23 @@
-
+/*
+	Written by Nic Mulvaney 
+	Normally
+*/
 
 var Botkit = require('botkit');
 var os = require('os');
 var memwatch = require('memwatch-next');
 var GoogleSpreadsheet = require("google-spreadsheet");
-var bot, oldMessage;
+var bot, oldMessage, controller, loadedData;
 
-// if (!process.env.bot_token) {
-//     console.log('Error: Specify bot token in environment');
-//     process.exit(1);
-// }
-// if (!process.env.google_url) {
-//     console.log('Error: Specify google url in environment');
-//     process.exit(1);
-// }
-// console.log(process.env.BOT_TOKEN);
+if (!process.env.bot_token) {
+    console.log('Error: Please specify bot token in environment');
+    process.exit(1);
+}
+
+if (!process.env.google_url) {
+    console.log('Error: Please specify google url in environment');
+    process.exit(1);
+}
 
 if(process.env.GOOGLE_URL){
 	process.env.GOOGLE_URL = process.env.GOOGLE_URL.match(/[-\w]{25,}/);
@@ -25,10 +28,7 @@ memwatch.on('leak', function(info) {
 	console.log(info);
 });
 
-var controller;
-
-var my_sheet = new GoogleSpreadsheet(process.env.GOOGLE_URL || '1bUvxoGOKLqkhyNb6eTpiHkllFy2D0gFRGMhVrLNopzc');
-var loadedData;
+var my_sheet = new GoogleSpreadsheet(process.env.GOOGLE_URL);
 
 var loadData = function(reload){
 	if(bot){
@@ -42,8 +42,7 @@ var loadData = function(reload){
 	});
 
 	bot = controller.spawn({
-		token: process.env.BOT_TOKEN || "xoxb-24874985728-F8NsGF5m5mIPnucBilxGldll"
-		// token: "xoxb-26588596465-70v8FMC5IoZPgNF9rMP7RkHS"
+		token: process.env.BOT_TOKEN
 	}).startRTM(function(){
 		console.log('ready');
 		if(reload){
@@ -128,4 +127,10 @@ var loadData = function(reload){
 
 loadData();
 
+
+// To keep Heroku's free dyno awake
+http.createServer(function(request, response) {
+    response.writeHead(200, {'Content-Type': 'text/plain'});
+    response.end('Ok, dyno is awake.');
+}).listen(process.env.PORT || 5000);
 

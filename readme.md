@@ -1,7 +1,6 @@
-# Slackbot
+# Slackbot + Spreadsheet
 
 > A quick and easy Slackbot using Google Sheets. No programing needed.
-
 
 
 ## Setup
@@ -12,8 +11,8 @@ To use this slackbot you need a [Slack](), [Heroku]() and [Google Docs]() accoun
 2. [Copy this](https://docs.google.com/spreadsheets/u/1/d/1FOsDXyyO7ZSfFYcW1GO7V7iV240eFjDjus8yJ6Ytl1o/copy) spreadsheet to your google docs and make it public *File > Publish to the web... > Publish*
 4. [Deploy to Heroku](https://heroku.com/deploy) - enter the bot **API token** and the Google Sheet **URL**. 
 
-Once installed, send up a direct message to your new bot from within Slack.
-If you wish, you can keep your bot alive by upgrading to Heroku Hobby otherwise it will sleep for 6 hours a day.
+Once installed, send up a direct message to your new bot from within Slack.<br/>
+**IMPORTANT:** If you wish, you can keep your bot alive by upgrading to Heroku Hobby otherwise it will sleep for 6 hours a day.
 
 ## Usage
 
