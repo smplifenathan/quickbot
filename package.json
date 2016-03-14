@@ -6,7 +6,7 @@
   "scripts": {
       "start": "node bot.js"
   },
-  "author": "Nic Mulvaney @mulhoon",
+  "author": "Nic Mulvaney",
   "license": "ISC",
   "dependencies": {
     "botkit": "0.0.8",
