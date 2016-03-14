@@ -2,17 +2,31 @@
 
 var Botkit = require('botkit');
 var os = require('os');
+var memwatch = require('memwatch-next');
 var GoogleSpreadsheet = require("google-spreadsheet");
 var bot, oldMessage;
 
-var controller = Botkit.slackbot({
-		debug: true,
+memwatch.on('leak', function(info) {
+	console.log('MEMORY LEAK')
+	console.log(info);
 });
+
+var controller;
 
 var my_sheet = new GoogleSpreadsheet('1bUvxoGOKLqkhyNb6eTpiHkllFy2D0gFRGMhVrLNopzc');
 var loadedData;
 
 var loadData = function(reload){
+	if(bot){
+		bot.closeRTM();
+	}
+	if(controller){
+		delete controller;
+	}
+	controller = Botkit.slackbot({
+			debug: false,
+	});
+
 	bot = controller.spawn({
 		token: "xoxb-24874985728-F8NsGF5m5mIPnucBilxGldll"
 	}).startRTM(function(){
@@ -75,7 +89,9 @@ var loadData = function(reload){
 		for(var key in row_data){
 			(function(){
 				var q = row_data[key];
-				var hears = q.hears.split('\n');
+
+				var hears = ('\\b'+q.hears.replace(/\n/g, '\\b\n\\b')+'\\b').split('\n');
+				console.log(hears);
 				controller.hears(hears,'direct_message,direct_mention,mention',function(bot, message) {
 					doo(message, q);
 				});

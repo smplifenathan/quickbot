@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "botkit": "0.0.8",
-    "google-spreadsheet": "^1.1.4"
+    "google-spreadsheet": "^1.1.4",
+    "memwatch-next": "^0.2.10"
   }
 }
