@@ -1,7 +1,7 @@
 {
-  "name": "dr-bot",
+  "name": "Quickbot",
   "version": "0.0.1",
-  "description": "Bot for slack",
+  "description": "A bot for Slack + Google Sheets",
   "main": "bot.js",
   "scripts": {
       "start": "node bot.js"

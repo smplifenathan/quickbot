@@ -1,7 +1,7 @@
 {
-  "name": "Slackbot",
+  "name": "Quickbot",
   "description": "A Slackbot using Google Sheets",
-  "repository": "https://github.com/Normally/dr-bot",
+  "repository": "https://github.com/Normally/Quickbot",
   "logo": "https://node-js-sample.herokuapp.com/node.svg",
   "env": {
     "BOT_TOKEN": {

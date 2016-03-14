@@ -1,5 +1,6 @@
-# Slackbot + Spreadsheet
+# QuickBot
 
+![Quickbot](quickbot.svg)
 > A quick and easy Slackbot using Google Sheets. No programing needed.
 
 
@@ -7,12 +8,14 @@
 
 To use this slackbot you need a [Slack](), [Heroku]() and [Google Docs]() account.
 
-1. [Add a bot configuration](https://my.slack.com/services/new/bot) on Slack.
-2. [Copy this](https://docs.google.com/spreadsheets/u/1/d/1FOsDXyyO7ZSfFYcW1GO7V7iV240eFjDjus8yJ6Ytl1o/copy) spreadsheet to your google docs and make it public *File > Publish to the web... > Publish*
-4. [Deploy to Heroku](https://heroku.com/deploy) - enter the bot **API token** and the Google Sheet **URL**. 
+1. <a href="https://my.slack.com/services/new/bot" target="_blank">Add a bot configuration</a> on Slack.
 
-Once installed, send up a direct message to your new bot from within Slack.<br/>
-**IMPORTANT:** If you wish, you can keep your bot alive by upgrading to Heroku Hobby otherwise it will sleep for 6 hours a day.
+2. <a href="https://docs.google.com/spreadsheets/u/1/d/1FOsDXyyO7ZSfFYcW1GO7V7iV240eFjDjus8yJ6Ytl1o/copy target="_blank">Copy this</a> spreadsheet to your google docs and make it public *File > Publish to the web... > Publish*
+
+3. [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)<br/>enter the bot **API token** and the Google Sheet **URL**. 
+<br/><br/>
+
+Once installed, send up a direct message to your new bot from within Slack. **IMPORTANT:** If you wish, you can keep your bot alive by upgrading to Heroku Hobby otherwise it will sleep for 6 hours a day.
 
 ## Usage
 
