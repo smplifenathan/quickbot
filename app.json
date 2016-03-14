@@ -3,5 +3,15 @@
   "description": "A Slackbot using Google Sheets",
   "repository": "https://github.com/Normally/dr-bot",
   "logo": "https://node-js-sample.herokuapp.com/node.svg",
+  "env": {
+    "BOT_TOKEN": {
+      "description": "API Token. Begins with 'xoxb-'",
+      "value": ""
+    },
+    "GOOGLE_URL": {
+      "description": "The url for your spreadsheet.",
+      "value": "5"
+    }
+  },
   "keywords": ["node", "botkit", "slack" ,"google", "spreadsheets"]
 }
