@@ -6,7 +6,7 @@ var GoogleSpreadsheet = require("google-spreadsheet");
 var bot, oldMessage;
 
 var controller = Botkit.slackbot({
-		debug: false,
+		debug: true,
 });
 
 var my_sheet = new GoogleSpreadsheet('1bUvxoGOKLqkhyNb6eTpiHkllFy2D0gFRGMhVrLNopzc');
@@ -65,10 +65,7 @@ var loadData = function(reload){
 				ask(message, convo, q);
 			});
 		}else{
-			console.log(message);
-			var matches = message.text.match(new RegExp(message.hears[0], 'i'));
-			var value = matches[1];
-			var say = q.says.replace('$', value);
+			var say = q.says.replace('$', message.match[1]);
 			bot.reply(message, say);
 		}
 	};
@@ -80,7 +77,6 @@ var loadData = function(reload){
 				var q = row_data[key];
 				var hears = q.hears.split('\n');
 				controller.hears(hears,'direct_message,direct_mention,mention',function(bot, message) {
-					message.hears = hears;
 					doo(message, q);
 				});
 			})();
