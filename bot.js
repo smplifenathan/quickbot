@@ -6,6 +6,7 @@
 var Botkit = require('botkit');
 var os = require('os');
 var memwatch = require('memwatch-next');
+var http = require('http');
 var GoogleSpreadsheet = require("google-spreadsheet");
 var bot, oldMessage, controller, loadedData;
 
