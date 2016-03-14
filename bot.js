@@ -10,12 +10,12 @@ var http = require('http');
 var GoogleSpreadsheet = require("google-spreadsheet");
 var bot, oldMessage, controller, loadedData;
 
-if (!process.env.bot_token) {
+if (!process.env.BOT_TOKEN) {
     console.log('Error: Please specify bot token in environment');
     process.exit(1);
 }
 
-if (!process.env.google_url) {
+if (!process.env.GOOGLE_URL) {
     console.log('Error: Please specify google url in environment');
     process.exit(1);
 }
