@@ -15,6 +15,6 @@
   },
   "repository": {
       "type": "git",
-      "url": "https://github.com/horimislime/botkit-heroku-redis-example.git"
+      "repository": "https://github.com/Normally/dr-bot"
   },
 }
