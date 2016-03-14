@@ -14,8 +14,13 @@ var bot, oldMessage;
 //     console.log('Error: Specify google url in environment');
 //     process.exit(1);
 // }
+// console.log(process.env.BOT_TOKEN);
 
-// process.env.google_url  = process.env.google_url.match(/[-\w]{25,}/);
+if(process.env.GOOGLE_URL){
+	process.env.GOOGLE_URL = process.env.GOOGLE_URL.match(/[-\w]{25,}/);
+}
+
+console.log(process.env.GOOGLE_URL);
 
 memwatch.on('leak', function(info) {
 	console.log('MEMORY LEAK')
@@ -24,7 +29,7 @@ memwatch.on('leak', function(info) {
 
 var controller;
 
-var my_sheet = new GoogleSpreadsheet(process.env.google_url.match(/[-\w]{25,}/) || '1bUvxoGOKLqkhyNb6eTpiHkllFy2D0gFRGMhVrLNopzc');
+var my_sheet = new GoogleSpreadsheet(process.env.GOOGLE_URL || '1bUvxoGOKLqkhyNb6eTpiHkllFy2D0gFRGMhVrLNopzc');
 var loadedData;
 
 var loadData = function(reload){
