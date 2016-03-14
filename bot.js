@@ -44,7 +44,7 @@ var loadData = function(reload){
 	});
 
 	bot = controller.spawn({
-		token: process.env.bot_token || "xoxb-24874985728-F8NsGF5m5mIPnucBilxGldll"
+		token: process.env.BOT_TOKEN || "xoxb-24874985728-F8NsGF5m5mIPnucBilxGldll"
 		// token: "xoxb-26588596465-70v8FMC5IoZPgNF9rMP7RkHS"
 	}).startRTM(function(){
 		console.log('ready');
