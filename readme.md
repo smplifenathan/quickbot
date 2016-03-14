@@ -15,7 +15,7 @@ To use this slackbot you need a [Slack](), [Heroku]() and [Google Docs]() accoun
 3. [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)<br/>enter the bot **API token** and the Google Sheet **URL**. 
 <br/><br/>
 
-Once installed, send up a direct message to your new bot from within Slack. **IMPORTANT:** If you wish, you can keep your bot alive by upgrading to Heroku Hobby otherwise it will sleep for 6 hours a day.
+Once installed, send a direct message to your new bot from within Slack. **IMPORTANT:** If you wish, you can keep your bot alive by upgrading to Heroku Hobby otherwise it will sleep for 6 hours a day.
 
 ## Usage
 
@@ -25,6 +25,10 @@ When ```conversation``` is set to TRUE will expect an answer. Control which row 
 
 Words and phrases can be extracted from the conversation using ```(.*)``` in ```hears``` and repeated with ```$``` in ```says```
 
-#### Reloading
+##### Reloading
 
 Just type ```reload``` in your Slack chat and the bot will reload the changes from the spreadsheet.
+
+## About
+
+Written by [Nic Mulvaney](https://github.com/mulhoon) at [Normally](http://normally.com) using [Botkit](https://github.com/howdyai/botkit) and [Node Google Spreadsheet](https://github.com/theoephraim/node-google-spreadsheet)
