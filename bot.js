@@ -1,6 +1,6 @@
 /*
 	Written by Nic Mulvaney 
-	Normally
+	Normally 2016
 */
 
 var Botkit = require('botkit');
