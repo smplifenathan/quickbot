@@ -20,8 +20,6 @@ if(process.env.GOOGLE_URL){
 	process.env.GOOGLE_URL = process.env.GOOGLE_URL.match(/[-\w]{25,}/);
 }
 
-console.log(process.env.GOOGLE_URL);
-
 memwatch.on('leak', function(info) {
 	console.log('MEMORY LEAK')
 	console.log(info);
