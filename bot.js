@@ -3,11 +3,16 @@
 	Normally 2016
 */
 
+// REMOVE THES FOR LIVE VERSION
+// process.env.BOT_TOKEN = 'xoxb-24900082337-IDrUGCXSNKcPewbGHfda536H';
+// process.env.GOOGLE_URL = 'https://docs.google.com/spreadsheets/d/1S6OnH58mULVmcwXss9WK-1ujUyymdJz6g5RbZgdcaoM/edit#gid=0';
+
 var Botkit = require('botkit');
 var os = require('os');
 var memwatch = require('memwatch-next');
 var http = require('http');
 var GoogleSpreadsheet = require("google-spreadsheet");
+var request = require('request');
 var bot, oldMessage, controller, loadedData;
 
 if (!process.env.BOT_TOKEN) {
@@ -97,7 +102,56 @@ var loadData = function(reload){
 			var say = q.says.split('\n');
 			say = say[Math.floor(Math.random() * say.length)];
 			say = say.replace('$', message.match[1]);
-			bot.reply(message, say);
+
+			var link = q.attachment.split('\n');
+			var attachments = [];
+
+			if(link.length){
+				var attachment = {
+					title: link[0].replace('$', message.match[1]),
+					text: link[1],
+					color: '#FFCC99',
+					image_url: link[2],
+					fields: []
+				};
+				attachments.push(attachment);
+			}
+
+			if(link[0] === 'WIKISEARCH'){
+				bot.startTyping(message);
+				request.post({
+						url:'https://en.wikipedia.org/w/api.php',
+						form:{
+							action:'opensearch',
+							limit:1,
+							search:message.match[1]
+						}
+					},
+					function (error, response, body) {
+						// console.log(response);
+					  if (!error && response.statusCode == 200) {
+					    var wikiData = JSON.parse(body) // Show the HTML for the Google homepage. 
+
+					    attachments[0].title = wikiData[1][0] || 'Sorry';
+					    if(wikiData[2][0]){
+					    	attachments[0].text = (wikiData[2][0] + '\n' + wikiData[3][0])
+					    }else{
+							attachments[0].text = "I couldn't find that";
+					    }
+					    // console.log(attachments);
+					    // console.log(wikiData[2]);
+						bot.replyWithTyping(message, {
+							text: say,
+							attachments: attachments
+						});
+					  }
+				});
+			}else{
+				bot.replyWithTyping(message, {
+					text: say,
+					attachments: attachments
+				});
+			}
 		}
 	};
 
