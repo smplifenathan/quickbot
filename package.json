@@ -16,5 +16,8 @@
   "repository": {
       "type": "git",
       "repository": "https://github.com/Normally/dr-bot"
-  }
+  },
+  "engines": {
+   "node": "5.1.1"
+}
 }
